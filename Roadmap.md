@@ -71,7 +71,7 @@ Asus Zenbook Duo
 - Create Readme 1mn
 - Create Notebook 1mn
 - Make presentation 4h
-**
+- Update Roadmap on all notebook readme 10mn
 
 
 - Make basic App 1h

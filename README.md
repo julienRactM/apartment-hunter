@@ -12,7 +12,7 @@ Pierre-Alexis Lebair
 
 ## Explication du projet
 
-Développement d'un outil visant à estimer la valeur de biens immobiliers.
+Développement d'un outil visant à estimer la valeur de biens immobiliers à partir des charactéristiques d'un lot.
 
 ## Project Roadmap
 ### Infos
@@ -21,7 +21,7 @@ Julien Ract-Mugnerot
 Pierre-Alexis Lebair
 
 #### Used computers :
-Asus Zenbook Duo
+Asus Zenbook Duo no "carte graphique"
 
 
 ### Steps
