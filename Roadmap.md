@@ -1,16 +1,15 @@
-# Roadmap for appartment-hunter project
-
-**A voir sur le github svp**
-
-## Infos
-Projet sur la régression logistique réalisé par :
+## Roadmap for appartment-hunter project
+**A voir sur le Readme.md du github svp**
+### Infos
+#### Project members :
 Julien Ract-Mugnerot
 Pierre-Alexis Lebair
 
-Machine utilisé pour les calculs :
+#### Used computers :
 Asus Zenbook Duo
 
-## Steps
+
+### Steps
 1. find friends
 - find friends 2y
 2. data
@@ -85,5 +84,7 @@ Asus Zenbook Duo
 
 101. Extra
 
-Do presentation in reveal.js 12h
-Export Docker To aws 3h
+- Do presentation in reveal.js 12h
+- Export Docker To aws 3h
+- Office Timeline roadmap
+https://www.officetimeline.com/fr/feuille-de-route/modeles
