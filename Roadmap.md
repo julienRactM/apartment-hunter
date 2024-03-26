@@ -1,49 +1,89 @@
-Vous suivez consciencieusement les étapes suivantes :
-1. Vous vous rapprochez d’un ou plusieurs collaborateurs pour la
-réalisation du projet.
-2. Vous récupérez des données gracieusement fournies par une agence
-immobilière ici. Vous avez le choix entre deux datasets.
-## We here
-3. Vous consultez vos données et vous créez une feuille de route du
-projet. Énumérez les tâches puis estimez leur durée. Estimez les
-ressources humaines et matérielles (nombre de personnes
-impliquées dans le projet, les machines utilisées pour le
-_3
-développement de l’outil).
-4. Vous créez votre repository github ainsi qu’un tableau Trello afin de
-répartir, équitablement, les tâches du projet.
-5. Traitez et nettoyez vos données. Vous devrez traiter les données
-manquantes (par imputation ou suppression), les dublicats, les
-données aberrantes et tout autre donnée dont la modification
-(normalisation, standardisation, ...) est pertinente. Chaque choix doit
-être justifié et argumenté.
-6. Réalisez une analyse exploratoire complète de vos données à l’aide de
-l’outil Power BI.
-7. Documentez vous sur les algorithmes de régression et rédigez un
-descriptif du fonctionnement d’au moins 3 de ces algorithmes. Pensez
-à utiliser des schémas d’illustration. Vous avez le choix de fournir votre
-documentation sous forme du readme de votre repository ou d’un
-fichier PDF.
-8. Analysez et sélectionnez les caractéristiques (features) à modéliser.
-Employez différentes méthodes afin d’apporter une solution finale
-(Boruta, forward feature selection, ...).
-9. Entraînez au moins 3 algorithmes de prédiction du prix des biens
-immobiliers puis évaluez et comparez leur performance.
-10. Les résultats ne vous conviennent pas ? Utilisez la méthode du grid
-search afin d’identifier le modèle (et les paramètres) avec les
-meilleures performances possibles.
-_4
-11. Déployez le modèle sélectionné sur une application Flask. Le visuel
-doit être un minimum travaillé.
-12. Docker est une technologie de conteneurisation qui permet
-d'encapsuler une application et ses dépendances dans un conteneur
-léger et portable. En créant un script Docker, vous assurez que votre
-application et son environnement de développement sont
-reproductibles et peuvent être exécutés de manière cohérente sur
-n'importe quel environnement, qu'il s'agisse d'un ordinateur local, d'un
-serveur de production ou d'un service cloud.
-Créez un script Docker permettant d’installer les dépendances
-nécessaires à votre application, copier les fichiers de votre
-application dans le conteneur, et spécifier la commande à exécuter
-lorsque le conteneur démarre (par exemple, lancer votre application
-Flask).
+# Roadmap for appartment-hunter project
+
+**A voir sur le github svp**
+
+## Infos
+Projet sur la régression logistique réalisé par :
+Julien Ract-Mugnerot
+Pierre-Alexis Lebair
+
+Machine utilisé pour les calculs :
+Asus Zenbook Duo
+
+## Steps
+1. find friends
+- find friends 2y
+2. data
+- fetch data 5mn
+- first data observation 30mn
+- Choose a csv : 15mn
+3. roadmap
+- Create a roadamap 45mn
+4. ressources management
+- Create Github 15mn
+- Create Trello 15mn
+- Share Tasks 1h
+5. Preprocessing
+- Project Introduction 10mn
+- Complete Data Exploration w/ visualisation 4h
+- Data Cleaning  2h (Duplicates, Outliers, Scaling eventually ...)
+- find imputations solutions 1h
+
+6. Exploratory Power BI Analysis
+- Idk 4h
+- Pdf export 15mn
+
+7. Stay up to date with technology - Linear Regression
+**Inside Readme**
+**Use IMGS**
+- def regression algorythm 15mn
+- def model 1 10mn
+- def model 2 10mn
+- def model 3 10mn
+
+8. Feature Analysis and Selection
+- Explore options (Boruta, forward feature selection, ...) 1h
+- feature Analysis 45mn
+- Feature Selection 30mn
+
+9. Train 3 models and evaluate their performance
+
+- train model 1 10mn
+- train model 2 10mn
+- train model 3 10mn
+
+10. Grid search
+
+- Grid Search 2h
+- Result interpretation 20mn
+- Model Final 1h
+- Project's conclusion
+
+11. Flask
+- Create basic Flask App 1h
+- Add random appart to App 30mn
+
+12. Docker Script
+- Docker 1h15
+
+
+
+100. Project Delivery
+- Create Readme 1mn
+- Create Notebook 1mn
+- Make presentation 4h
+**
+
+
+- Make basic App 1h
+- Add random appart to App 30mn
+
+
+- Maintain Readme 3h
+- Maintain requirements.txt 10mn
+
+
+101. Extra
+
+Do presentation in reveal.js 12h
+Export Docker To aws 3h

@@ -6,8 +6,8 @@ Pierre-Alexis Lebair
 
 ## Notes importantes à l'appréciation du projets :
 
-- Notebooks, présentations et trello sont en anglais, seul le readme et la roadmap sont en français
-- ffffffffffffff
+- Notebooks, présentations, roadmap et trello sont en anglais, seul le readme est en français
+- La roadmap est à lire de préférence sur le github
 
 
 ## Explication du projet
