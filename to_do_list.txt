@@ -1,1 +1,2 @@
 - Continuer analyse target price
+- virer les ventes non us
