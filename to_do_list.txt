@@ -1,2 +1,4 @@
 - Continuer analyse target price
 - virer les ventes non us
+- Reorder feature analysis
+- put things in it or take a look at dump.txt for others tricks and graphs
