@@ -5,3 +5,5 @@
 - update readme
 -put dashboard screen/img inside readme
 - note réalisme de la roadmap
+- see if we do custom transformers
+- look at bathrooom class 10-11
