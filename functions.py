@@ -96,31 +96,3 @@ def KBest_selector(data, target_name, k=1, score_function = 'f_regression'):
     new_df.loc[:, target_name] = data[target_name].copy()
     pd.options.mode.chained_assignment = 'warn'
     return new_df
-
-
-
-# Boruta feature importante
-def get_important_features(X, y):
-    for col in X.columns:
-        X[f"shadow_{col}"] = X[col].sample(frac=1).reset_index(drop=True)
-    
-    # Initiliaze Random Forest CLassifier without params
-    rf = RandomForestRegressor()
-    # Fit Random Forest on provided data
-    rf.fit(X,y)
-    # Create dictionary of feature importances
-    importances = {feature_name: f_importance for feature_name, f_importance in zip(X.columns, rf.feature_importances_)}
-    # Isolate importances of Shadow features
-    only_shadow_feat_importance = {key:value for key,value in importances.items() if "shadow" in key}
-    # get importance level of most important shadow feature
-    highest_shadow_feature = list(dict(sorted(only_shadow_feat_importance.items(), key=lambda item: item[1], reverse=True)).values())[0]
-    # get original feature which fulfill boruta selection criteria
-    selected_features = [key for key, value in importances.items() if value > highest_shadow_feature]
-    
-    dropped_features = [feature for feature in X.columns if feature not in selected_features and feature.find('shadow')]
-    if dropped_features:
-        print('columns dropped :', dropped_features)
-    else :
-        print('no features dropped')
-    
-    return selected_features
