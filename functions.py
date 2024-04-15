@@ -28,6 +28,7 @@ def save_model_if_best(new_score, pipeline, model_name):
                 joblib.dump(pipeline, f"app/app_model/{new_score}_{model_name}_model.pkl")
     # if no model has been saved yet save it.
     else:
+        print('first saved model')
         joblib.dump(pipeline, f"app/app_model/{new_score}_{model_name}_model.pkl")
 
 def load_best_model(model_name=False, path='app/app_model/'):
@@ -56,7 +57,6 @@ def iqr_range_price_filter(df, price_column):
     return new_df
 
 
-
 def variance_threshold_selector(data, threshold=0.2):
     selector = VarianceThreshold(threshold)
     selector.fit(data)
@@ -75,15 +75,15 @@ def KBest_selector(data, target_name, k=1, score_function = 'f_regression'):
         selector = SelectKBest(f_regression, k=k)
     elif score_function == 'f_classif':
         selector = SelectKBest(f_classif, k=k)
-    else :        
+    else :
         selector = SelectKBest(chi2, k=k)
         print('using chi2')
-        
+
     selector.fit(data.drop(columns=[target_name]), data[target_name])
     # Get columns to keep and create new dataframe with those only
     cols_idxs = selector.get_support(indices=True)
     new_df = data.iloc[:,cols_idxs]
-    
+
     # display the names of dropped columns
     dropped_features = [feature for feature in data.columns if feature not in new_df.columns]
     dropped_features.remove(target_name)
@@ -91,7 +91,7 @@ def KBest_selector(data, target_name, k=1, score_function = 'f_regression'):
         print('columns dropped :', dropped_features)
     else :
         print('no features dropped')
-    
+
     pd.options.mode.chained_assignment = None
     new_df.loc[:, target_name] = data[target_name].copy()
     pd.options.mode.chained_assignment = 'warn'
