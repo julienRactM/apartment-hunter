@@ -24,8 +24,9 @@ def save_model_if_best(new_score, pipeline, model_name):
 
             # if we arrive there it means score was too low or the model of this name haven't been saved yet.
             # if a new model algorythm is used we save it.
-            if  model_name not in previously_used_models:
-                joblib.dump(pipeline, f"app/app_model/{new_score}_{model_name}_model.pkl")
+        if  model_name not in previously_used_models:
+            print('new model ran')
+            joblib.dump(pipeline, f"app/app_model/{new_score}_{model_name}_model.pkl")
     # if no model has been saved yet save it.
     else:
         print('first saved model')
