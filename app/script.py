@@ -3,13 +3,16 @@ import pandas as pd
 import joblib
 
 def model_prediction(sqft_living, sqft_living15, grade, zipcode_class):
-    model = joblib.load('app/app_model/96308_knn_model.pkl')
+    print('model_prediction_1')
+    model = joblib.load('app_model/96308_knn_model.pkl')
+    print('model_prediction_2')
     # with open('app/app_model/best_rf_model.pkl', 'rb') as f:
     #     model = pickle.load(f)
-    X_test = pd.DataFrame({'sqft_living'            : [sqft_living],
+
+    X_test = pd.DataFrame({'sqft_living'     : [sqft_living],
                        'sqft_living15'       : [sqft_living15],
-                       'grade'  : [grade],
-                       'zipcode_class' : [zipcode_class],
+                       'grade'               : [grade],
+                       'zipcode_class'       : [zipcode_class],
                        })
 
     return [model.predict(X_test)] # , model.predict_proba(X_test)

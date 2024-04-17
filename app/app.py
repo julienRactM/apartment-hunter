@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-import joblib
 import pandas as pd
 from script import model_prediction
 import numpy as np
@@ -34,3 +33,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    print("app_started")
