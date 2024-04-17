@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import joblib
 import pandas as pd
-from app.avc_script import model_prediction
+from script import model_prediction
 import numpy as np
 
 app = Flask(__name__)
@@ -10,71 +10,27 @@ app = Flask(__name__)
 def index():
     titles = []
 
-    titles = "Estimating the value of your house"
+    titles = "Estimating the value of your house in the King County area, Washington State"
 
     if request.method == 'POST':
-        # model = joblib.load('app/app_model/current_model.pkl')
-        age = request.form.get('age')
-        hypertension = request.form.get('hypertension')
-        avg_glucose_level = request.form.get('avg_glucose_level')
-        heart_disease = request.form.get('heart_disease')
-        smoking_status = request.form.get('smoking_status')
+        sqft_living = request.form.get('sqft_living')
+        sqft_living15 = request.form.get('sqft_living15')
+        grade = int(request.form.get('grade'))
+        zipcode_class = int(request.form.get('zipcode_class'))
 
-        prediction = model_prediction(age, hypertension, avg_glucose_level, heart_disease, smoking_status)[0]
-        predict_proba = model_prediction(age, hypertension, avg_glucose_level, heart_disease, smoking_status)[1]
+        prediction = model_prediction(sqft_living, sqft_living15, grade, zipcode_class)[0][0]
+        # predict_proba = model_prediction(sqft_living, sqft_living15, grade, zipcode_class)[1]
 
-        if prediction == 1 :
-            comment = "L'algorithme détecte un risque d'AVC"
+        if prediction :
+            comment = f"We estimate your home to be worth {prediction}"
         else :
-            comment = "L'algorithme ne prédit pas de risque accru d'AVC"
+            comment = "There was an error prediction value !"
 
-        return render_template('index.html', titles = titles, prediction=prediction, comment=comment, age=age,\
-            hypertension=hypertension, avg_glucose_level=avg_glucose_level, heart_disease=heart_disease, smoking_status=smoking_status,\
-                predict_proba = np.round(predict_proba[0][1], 2)) # active_tab='home'
-
-
-    return render_template('index.html') # active_tab='home'
-
-if __name__ == '__main__':
-    app.run(debug=True)
+        return render_template('index.html', titles = titles, prediction=prediction, comment=comment, sqft_living=sqft_living,\
+            sqft_living15=sqft_living15, grade=grade, zipcode_class=zipcode_class,) # active_tab='home' predict_proba = np.round(predict_proba[0][1], 2)
 
 
-
-
-@app.route('/Exemples', methods=['GET', 'POST'])
-def index():
-    titles = []
-
-    titles = "Estimating the value of your house"
-
-    if request.method == 'POST':
-        # model = joblib.load('app/app_model/current_model.pkl')
-        age = request.form.get('age')
-        hypertension = request.form.get('hypertension')
-        avg_glucose_level = request.form.get('avg_glucose_level')
-        heart_disease = request.form.get('heart_disease')
-        smoking_status = request.form.get('smoking_status')
-        X_test = pd.DataFrame({'age'            : [age],
-                        'hypertension'       : [hypertension],
-                        'avg_glucose_level'  : [avg_glucose_level],
-                        'heart_disease' : [heart_disease],
-                        'smoking_status' : [smoking_status]
-                        })
-
-        prediction = model_prediction(age, hypertension, avg_glucose_level, heart_disease, smoking_status)[0]
-        predict_proba = model_prediction(age, hypertension, avg_glucose_level, heart_disease, smoking_status)[1]
-
-        if prediction == 1 :
-            comment = "L'algorithme détecte un risque d'AVC"
-        else :
-            comment = "L'algorithme ne prédit pas de risque accru d'AVC"
-
-        return render_template('index.html', titles = titles, prediction=prediction, comment=comment, age=age,\
-            hypertension=hypertension, avg_glucose_level=avg_glucose_level, heart_disease=heart_disease, smoking_status=smoking_status,\
-                predict_proba = np.round(predict_proba[0][1], 2)) # active_tab='home'
-
-
-    return render_template('index.html') # active_tab='home'
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
