@@ -18,8 +18,8 @@ def model_prediction(sqft_living, sqft_living15, grade, zipcode_class):
     return [model.predict(X_test)] # , model.predict_proba(X_test)
 
 def error_message():
-    print("""Il faut entrer en ligne de commande in the King County area, Washington State :
-        python script.py age(float range[1-120]) hypertension(int 1=True) avg_glucose_level(float range [50 300]) heart_disease(int 1=True) smoking_status(str smokes - formerly smoked - never smoked)""")
+    print(""" Needs to enter in command line :
+        python script.py sqft_living(float range[300-5000]) sqft_living15(float range[300-5000])  grade(int 1=True, range[5-11]) zipcode_class(int 1=True, range[0-4])""")
     return
 
 def main():

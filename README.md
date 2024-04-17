@@ -9,6 +9,10 @@ Pierre-Alexis Lebair
 - Notebooks, présentations, roadmap et trello sont en anglais, seul le readme est en français
 - La roadmap est à lire de préférence sur le github
 
+### Docker :
+- To build it : **docker build -t apartment-hunter-container .**
+- To check it was properly built : **docker images**
+- To run it  : **docker run apartment-hunter-container**
 
 ## Explication du projet
 

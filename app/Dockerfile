@@ -13,6 +13,8 @@ COPY templates /app/templates
 COPY requirements.txt requirements.txt
 # Install dependencies
 RUN pip install -r requirements.txt
-
+RUN python script.py 2000 2000 7 2
 # Define command to run your model
-# CMD ["python", "app.py"]
+
+# CMD ["python", "script.py", "2000", "2000", "7", "2"]
+CMD ["python", "app.py"]
