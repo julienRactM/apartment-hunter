@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
-import pandas as pd
 from script import model_prediction
-import numpy as np
+
 
 app = Flask(__name__)
 
@@ -32,7 +31,8 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug = True)
     # app.run(host='0.0.0.0', port=8080)
     # print("app_started1")
-    app.run(debug=True)
+    # app.run(debug=True)
     # print("app_started2")
