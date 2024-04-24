@@ -97,3 +97,41 @@ def KBest_selector(data, target_name, k=1, score_function = 'f_regression'):
     new_df.loc[:, target_name] = data[target_name].copy()
     pd.options.mode.chained_assignment = 'warn'
     return new_df
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+# Create a Countplot of the distribution of a numerical serie based on given bin ranges
+# Bins must be a list of at least 2 numbers
+def countplot_with_bins(serie, bins_list, plt_title="Distribution", plt_label="", fig_size=(12,7)):
+    serie = abs(serie)
+
+    classes = [f"Under {bins_list[0]}"]
+    for i in range(len(bins_list) - 1):
+        classes.append(f"Between {bins_list[i]} and {bins_list[i+1]}")
+    classes.append(f"Above {bins_list[-1]}")
+
+    residuals_class = pd.cut(serie, bins=[-float('inf')] + bins_list + [float('inf')], labels=classes)
+
+    plt.figure(figsize=fig_size)
+    ax = sns.countplot(x=residuals_class)
+    plt.title(plt_title)
+    if plt_label:
+        plt.xlabel(plt_label)
+    else :
+        plt.xlabel('Classes')
+    plt.xlabel('Residuals Class')
+    plt.ylabel('Count')
+
+    # Add percentage annotations
+    total = len(residuals_class)
+    for p in ax.patches:
+        percentage = '{:.1f}%'.format(100 * p.get_height() / total)
+        x = p.get_x() + p.get_width() / 2
+        y = p.get_height()
+        ax.annotate(percentage, (x, y), ha='center', va='bottom')
+
+    plt.show()
