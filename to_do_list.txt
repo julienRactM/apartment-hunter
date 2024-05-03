@@ -1,10 +1,8 @@
 - Continuer analyse target price
-- virer les ventes non us
 - Reorder feature analysis
-- put things in it or take a look at dump.txt for others tricks and graphs
 - update readme
--put dashboard screen/img inside readme
+- put dashboard screen/img inside readme
 - note réalisme de la roadmap
 - see if we do custom transformers
 - look at bathrooom class 10-11
-- use mae instead of rmse
+- may use mae instead of rmse

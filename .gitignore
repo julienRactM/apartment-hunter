@@ -1,3 +1,5 @@
 *palette*
 dump.txt
 dump2.txt
+*.ipynb_checkpoints*
+*to_do_list*
