@@ -6,3 +6,6 @@
 - see if we do custom transformers
 - look at bathrooom class 10-11
 - may use mae instead of rmse
+
+
+- Add Model results to presentation

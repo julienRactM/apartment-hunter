@@ -2,4 +2,5 @@
 dump.txt
 dump2.txt
 *.ipynb_checkpoints*
-*to_do_list*
+*to_do_list
+to_do_list.txt
