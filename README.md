@@ -327,9 +327,6 @@ In another VIF test sqft_above and sqft_living had VIF Scores of **above 60**.
 - **`Knn Regressor`** and **`XGBoost`** ended up being our best models, but our results remain fairly poor with our predictions hovering around `$96,000`.
 - It most likely won't be as accurate as consulting a local real estate valuation expert.
 
-
-
-
  <span style="font-size: 150%;"> **The current tool is best  when utilized for separating houses into differents price brackets, facilitating the evaluator's task.**</span>
 
  ### Possible reasons explaining those relatively poor performances :
