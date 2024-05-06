@@ -8,13 +8,14 @@ Pierre-Alexis Lebair
 
 - Notebooks, présentations, app, roadmap et trello sont en anglais
 - La roadmap est à lire de préférence sur le github
+- Il y a trois requirements.txt différents, un pour le projet, un pour l'app/docker, et un dernier pour la présentation revealjs.
 
 ### Docker :
 - To build it : **docker build -t apartment-hunter-container .**
 - To check it was properly built : **docker images**
 - To run it  : **docker run apartment-hunter-container**
 
-### Présentation :
+### Presentation :
 There is a Présentation_notebook.slides.html file you can open to see the final result.
 
 Here is how you can make a new presentation if you modified the notebook.
